@@ -1,11 +1,9 @@
 class Solution:
     def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
-        arr = []
-        
-        for i in range(len(nums)):
-            count = 0
-            for j in range(len(nums)):
-                if nums[j] < nums[i]:
-                    count+=1
-            arr.append(count)
-        return arr
+        sort = sorted(nums)
+        count = {}
+        for i , num in enumerate(sort):
+            if num not in count :
+                count[num] = i
+
+        return [count[num] for num in nums]
