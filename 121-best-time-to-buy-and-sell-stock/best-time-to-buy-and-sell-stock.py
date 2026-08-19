@@ -1,8 +1,8 @@
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        max_profit = 0
-        minimum = float('inf')
-        for price in prices :
-            minimum = min(price, minimum)
-            max_profit = max(max_profit, price - minimum)
-        return max_profit
+        maxx = 0
+        minn = float('INF')
+        for price in prices:
+            minn = min(minn , price)
+            maxx= max(maxx , price - minn)
+        return maxx
